@@ -65,14 +65,13 @@ optional arguments:
 | IN_CLOSE_NOWRITE  | File or directory not opened for writing was closed.   |
 | IN_CREATE  | File/directory  created  in  watched  directory  (e.g.,  open(2)  O_CREAT,  mkdir(2), link(2), symlink(2), bind(2) on a UNIX domain socket).   |
 | IN_DELETE  | File/directory deleted from watched directory.   |
-| IN_DELETE_SELF Watched file/directory was itself deleted.  (This event also occurs if an  object  is moved  to  another  filesystem,  since  mv(1)  in effect copies the file to the other filesystem and then deletes it from the original filesystem.)  In addition, an  |
-| IN_IG‐ NORED event will subsequently be generated for the watch descriptor.   |
+| IN_DELETE_SELF | Watched file/directory was itself deleted.  (This event also occurs if an  object  is moved  to  another  filesystem,  since  mv(1)  in effect copies the file to the other filesystem and then deletes it from the original filesystem.)  In addition, an  |
+| IN_IGNORED | event will subsequently be generated for the watch descriptor.   |
 | IN_MODIFY  | File was modified (e.g., write(2), truncate(2)).   |
-| IN_MOVE_SELF Watched file/directory was itself moved.   |
+| IN_MOVE_SELF | Watched file/directory was itself moved.   |
 | IN_MOVED_FROM  | Generated for the directory containing the old filename when a file is renamed.   |
 | IN_MOVED_TO  | Generated for the directory containing the new filename when a file is renamed.   |
 | IN_OPEN  | File or directory was opened.  |
-```
 
 ## Common errors
 ### inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
