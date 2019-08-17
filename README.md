@@ -57,7 +57,6 @@ optional arguments:
 ```
 
 ## Events (excerpt from the inotify man page)
-```
 ***IN_ACCESS (+)***
   File was accessed (e.g., read(2), execve(2)).
 
@@ -99,7 +98,6 @@ optional arguments:
 
 ***IN_OPEN (*)***
   File or directory was opened.
-```
 
 ## Common errors
 ### inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
