@@ -15,7 +15,7 @@ sudo ln -s /opt/watcher/watcher.py /usr/bin/watcher
 ```
 
 ## Screenshots
-[](images/image1.png)
+![](images/image1.png)
 
 ## Usage
 ```
