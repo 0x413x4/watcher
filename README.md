@@ -50,53 +50,54 @@ optional arguments:
 
 ### Select the level of verbosity
 ```bash 
-./watcher.py dir      # default
-./watcher.py -v dir   # verbose
-./watcher.py -a dir   # display all events
+./watcher.py dir                                 # default
+./watcher.py -v dir                              # verbose
+./watcher.py -a dir                              # display all events
+./watcher.py --events IN_CREATE IN_DELETE dir    # display all events
 ```
 
 ## Events (excerpt from the inotify man page)
 ```
-IN_ACCESS (+)
+***IN_ACCESS (+)***
   File was accessed (e.g., read(2), execve(2)).
 
-IN_ATTRIB (*)
+***IN_ATTRIB (*)***
   Metadata changed—for example, permissions (e.g., chmod(2)), timestamps (e.g., utimen‐
   sat(2)), extended attributes (setxattr(2)), link count (since Linux 2.6.25; e.g., for
   the target of link(2) and for unlink(2)), and user/group ID (e.g., chown(2)).
 
-IN_CLOSE_WRITE (+)
+***IN_CLOSE_WRITE (+)***
   File opened for writing was closed.
 
-IN_CLOSE_NOWRITE (*)
+***IN_CLOSE_NOWRITE (*)***
   File or directory not opened for writing was closed.
 
-IN_CREATE (+)
+***IN_CREATE (+)***
   File/directory  created  in  watched  directory  (e.g.,  open(2)  O_CREAT,  mkdir(2),
   link(2), symlink(2), bind(2) on a UNIX domain socket).
 
-IN_DELETE (+)
+***IN_DELETE (+)***
   File/directory deleted from watched directory.
 
-IN_DELETE_SELF
+***IN_DELETE_SELF***
   Watched file/directory was itself deleted.  (This event also occurs if an  object  is
   moved  to  another  filesystem,  since  mv(1)  in effect copies the file to the other
   filesystem and then deletes it from the original filesystem.)  In addition, an IN_IG‐
   NORED event will subsequently be generated for the watch descriptor.
 
-IN_MODIFY (+)
+***IN_MODIFY (+)***
   File was modified (e.g., write(2), truncate(2)).
 
-IN_MOVE_SELF
+***IN_MOVE_SELF***
   Watched file/directory was itself moved.
 
-IN_MOVED_FROM (+)
+***IN_MOVED_FROM (+)***
   Generated for the directory containing the old filename when a file is renamed.
 
-IN_MOVED_TO (+)
+***IN_MOVED_TO (+)***
   Generated for the directory containing the new filename when a file is renamed.
 
-IN_OPEN (*)
+***IN_OPEN (*)***
   File or directory was opened.
 ```
 
@@ -104,4 +105,7 @@ IN_OPEN (*)
 ### inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
 This issue is know to affect Debin and Ubuntu versions. It occurs when the user subscribes too a largenumber of files. This frequently occurs when using recursive monitoring on a deep file structure.
 
-This can be fixed by adding the following line to your /etc/systcl.conf file (see this [thread](https://github.com/dsoprea/PyInotify/issues/71))
+This can be fixed by adding the following line to your `/etc/systcl.conf` file (see this [thread](https://github.com/dsoprea/PyInotify/issues/71))
+```
+fs.inotify.max_user_watches=524288
+```
