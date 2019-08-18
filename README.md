@@ -10,7 +10,7 @@ Watcher is a small python script based on the inotify linux kernel API, which pr
 cd /opt
 sudo git clone https://github.com/chatn0ir/watcher.git
 cd watcher
-sudo pip3 install requirements.txt
+sudo pip3 install -r requirements.txt
 sudo ln -s /opt/watcher/watcher.py /usr/bin/watcher 
 ```
 
