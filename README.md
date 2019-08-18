@@ -81,3 +81,12 @@ This can be fixed by adding the following line to your `/etc/systcl.conf` file (
 ```
 fs.inotify.max_user_watches=524288
 ```
+
+# TODO
+- [ ] Make possible to watch multiple folders
+- [ ] Add a summary to the README pade, as it gets a wee bit out of hand 
+- [ ] Add a changelog section to the README page
+- [ ] Add an option to show timestamps
+- [ ] When file is created: show stats
+- [ ] Add globbing 
+- [ ] Specify folders to avoid
