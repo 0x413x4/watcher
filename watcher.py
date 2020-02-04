@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# @alexa - 2019
+# @0x413x4 - 2019
 """ watcher.py
 Small program to monitor linux filesystem events. It is based on the inotify
 linux kernel API, and can be used to for various purposes such as reverse
@@ -137,7 +137,7 @@ if __name__ == '__main__':
 
     print(ct + '=============================================================')
     print(ct + '                        WATCHER.PY')
-    print(ct + '                        @413x4sec - 2019')
+    print(ct + '                        @0x413x4 - 2019')
     print(ct + '=============================================================')
     print
 
